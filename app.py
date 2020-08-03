@@ -2,6 +2,7 @@ import praw
 import smtplib
 import schedule
 import time
+#from datetime import datetime
 
 reddit = praw.Reddit(client_id="LnVIf5fqLEvPVA",
                      client_secret="6eaWqJBLa-2-_okn1plM0p8hbXk",
