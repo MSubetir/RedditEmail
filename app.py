@@ -32,7 +32,7 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, "galinhasub666")
+    server.login(email_from, 'galinhasub666')
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
 
