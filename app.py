@@ -31,12 +31,12 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, environ['KEY'])
+    server.login(email_from, environ['FROM_KEY'])
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
 
 
-schedule.every().day.at("16:35").do(send_email)
+schedule.every().day.at("13:40").do(send_email)
 
 while True:
     schedule.run_pending()
