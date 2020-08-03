@@ -36,7 +36,7 @@ def send_email():
     server.quit()
 
 
-schedule.every().day.at("13:40").do(send_email)
+schedule.every().day.at("16:38").do(send_email)
 
 while True:
     schedule.run_pending()
