@@ -13,7 +13,7 @@ lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHum
          "pescocofino", "Outdoors"]
 
 email_from = "galinharadical@gmail.com"
-email_to = "msubetir@gmail.com"
+email_to = "mayconsub666@gmail.com"
 
 
 def hots():
@@ -32,12 +32,13 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, 'galinhasub666')
+    server.login(email_from, "galinhasub666")
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
+    print("foi")
 
 
-schedule.every().minute.do(send_email)
+schedule.every(30).seconds.do(send_email)
 
 while True:
     schedule.run_pending()
