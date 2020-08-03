@@ -5,9 +5,9 @@ import time
 import os
 from os import environ
 
-reddit = praw.Reddit(client_id=environ['ID'],
-                     client_secret=environ['SECRET'],
-                     user_agent=environ['AGENT'])
+reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
+                     client_secret='6eaWqJBLa-2-_okn1plM0p8hbXk',
+                     user_agent='my user agent')
 
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
