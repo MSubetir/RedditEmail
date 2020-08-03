@@ -2,6 +2,7 @@ import praw
 import smtplib
 import schedule
 import time
+import os
 from os import environ
 
 reddit = praw.Reddit(client_id=environ['ID'],
@@ -11,7 +12,7 @@ reddit = praw.Reddit(client_id=environ['ID'],
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
-email_from = environ['FROM']
+email_from = "galinharadical@gmail.com"
 email_to = "msubetir@gmail.com"
 
 
@@ -31,7 +32,7 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, environ['FROM_KEY'])
+    server.login(email_from, "galinhasub666")
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
 
