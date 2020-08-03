@@ -2,25 +2,33 @@ import praw
 import smtplib
 import schedule
 import time
+import os
+from os import environ
 
-reddit = praw.Reddit(client_id="LnVIf5fqLEvPVA",
-                     client_secret="6eaWqJBLa-2-_okn1plM0p8hbXk",
-                     user_agent="my user agent")
+reddit = praw.Reddit(client_id=environ['ID'],
+                     client_secret=environ['SECRET'],
+                     user_agent=environ['AGENT'])
+#LnVIf5fqLEvPVA
+#6eaWqJBLa-2-_okn1plM0p8hbXk
+#my user agent
 
-lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar", "pescocofino", "Outdoors"]
+lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
+         "pescocofino", "Outdoors"]
 email_from = "galinharadical@gmail.com"
 email_to = "msubetir@gmail.com"
+
 
 def hots():
     msg = ""
     for i, communitie in enumerate(lista):
         subreddit = reddit.subreddit(communitie)
         msg += "=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~\n"
-        msg += subreddit.display_name+"\n\n"
+        msg += subreddit.display_name + "\n\n"
         for submission in subreddit.hot(limit=5):
-            msg += submission.title+"\n"
-            msg += submission.url+"\n\n"
+            msg += submission.title + "\n"
+            msg += submission.url + "\n\n"
     return msg
+
 
 def send_email():
     msg = hots()
@@ -30,6 +38,7 @@ def send_email():
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
     print("Email enviado")
+
 
 schedule.every().minute.do(send_email)
 
