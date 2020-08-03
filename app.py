@@ -5,15 +5,16 @@ import time
 import os
 from os import environ
 
-reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
-                     client_secret='6eaWqJBLa-2-_okn1plM0p8hbXk',
-                     user_agent='my user agent')
+reddit = praw.Reddit(client_id=environ['ID'],
+                     client_secret=environ['SECRET'],
+                     user_agent=environ['AGENT'])
 
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
-email_from = "mayconsub666@gmail.com"
-email_to = "galinharadical@gmail.com"
+email_from = environ['FROM']
+key_from = environ['FROM_KEY']
+email_to = environ['TO']
 
 
 def hots():
@@ -32,13 +33,13 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, 'khaleesi272')
+    server.login(email_from, key_from)
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
-    print("foi")
+    print("Email enviado")
 
 
-schedule.every().minute.do(send_email)
+schedule.every(10).minutes.do(send_email)
 
 while True:
     schedule.run_pending()
