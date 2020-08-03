@@ -12,8 +12,8 @@ reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
-email_from = "galinharadical@gmail.com"
-email_to = "mayconsub666@gmail.com"
+email_from = "mayconsub666@gmail.com"
+email_to = "msubetir@gmail.com"
 
 
 def hots():
@@ -32,7 +32,7 @@ def send_email():
     msg = hots()
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(email_from, "galinhasub666")
+    server.login(email_from, 'khaleesi272')
     server.sendmail(email_from, email_to, msg.encode("utf-8"))
     server.quit()
     print("foi")
