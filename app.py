@@ -13,7 +13,7 @@ lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHum
          "pescocofino", "Outdoors"]
 
 email_from = "mayconsub666@gmail.com"
-email_to = "msubetir@gmail.com"
+email_to = "galinharadical@gmail.com"
 
 
 def hots():
@@ -38,7 +38,7 @@ def send_email():
     print("foi")
 
 
-schedule.every(30).seconds.do(send_email)
+schedule.every().minute.do(send_email)
 
 while True:
     schedule.run_pending()
