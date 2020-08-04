@@ -40,7 +40,7 @@ def send_email():
 
 
 
-schedule.every().minute.do(send_email)
+schedule.every().day.at("09:20").do(send_email)
 while True:
     schedule.run_pending()
     time.sleep(3)
