@@ -19,8 +19,8 @@ lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHum
 #email_from = environ['FROM']
 #key_from = environ['FROM_KEY']
 #email_to = environ['TO']
-email_from = 'galinharadical@gmail.com'
-key_from = 'galinhasub666'
+email_from = 'mayconsub666@gmail.com'
+key_from = 'khaleesi272'
 email_to = 'msubetir@gmail.com'
 
 def hots():
