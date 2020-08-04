@@ -5,10 +5,6 @@ import time
 import os
 from os import environ
 
-#reddit = praw.Reddit(client_id=environ['ID'],
-#                     client_secret=environ['SECRET'],
-#                     user_agent=environ['AGENT'])
-
 reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
                      client_secret='6eaWqJBLa-2-_okn1plM0p8hbXk',
                      user_agent='my user agent')
@@ -16,12 +12,10 @@ reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
-#email_from = environ['FROM']
-#key_from = environ['FROM_KEY']
-#email_to = environ['TO']
 email_from = 'galinharadical@gmail.com'
 key_from = 'galinhasub666'
 email_to = 'msubetir@gmail.com'
+
 
 def hots():
     msg = ""
