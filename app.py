@@ -39,8 +39,8 @@ def send_email():
     print("Email enviado")
 
 
-schedule.every(10).minutes.do(send_email)
+schedule.every().minute.do(send_email)
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(3)
