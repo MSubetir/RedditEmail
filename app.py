@@ -9,6 +9,7 @@ reddit = praw.Reddit(client_id=environ['ID'],
                      client_secret=environ['SECRET'],
                      user_agent=environ['AGENT'])
 
+# Comunidades a gosto :)
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
@@ -38,8 +39,9 @@ def send_email():
     server.quit()
     print("Email enviado")
 
+# +3 horas para compensar o fuso do local que está hospedado
 schedule.every().day.at("10:00").do(send_email)
-schedule.every().day.at("22:00").do(send_email)
+
 
 while True:
     schedule.run_pending()
