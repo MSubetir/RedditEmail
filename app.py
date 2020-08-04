@@ -5,23 +5,17 @@ import time
 import os
 from os import environ
 
-#reddit = praw.Reddit(client_id=environ['ID'],
-#                     client_secret=environ['SECRET'],
-#                     user_agent=environ['AGENT'])
-
-reddit = praw.Reddit(client_id='LnVIf5fqLEvPVA',
-                     client_secret='6eaWqJBLa-2-_okn1plM0p8hbXk',
-                     user_agent='my user agent')
+reddit = praw.Reddit(client_id=environ['ID'],
+                     client_secret=environ['SECRET'],
+                     user_agent=environ['AGENT'])
 
 lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
          "pescocofino", "Outdoors"]
 
-#email_from = environ['FROM']
-#key_from = environ['FROM_KEY']
-#email_to = environ['TO']
-email_from = 'mayconsub666@gmail.com'
-key_from = 'khaleesi272'
-email_to = 'msubetir@gmail.com'
+email_from = environ['FROM']
+key_from = environ['FROM_KEY']
+email_to = environ['TO']
+
 
 def hots():
     msg = ""
@@ -45,8 +39,8 @@ def send_email():
     print("Email enviado")
 
 
-schedule.every().minute.do(send_email)
 
+schedule.every().minute.do(send_email)
 while True:
     schedule.run_pending()
     time.sleep(3)
