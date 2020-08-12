@@ -10,8 +10,7 @@ reddit = praw.Reddit(client_id=environ['ID'],
                      user_agent=environ['AGENT'])
 
 # Comunidades a gosto :)
-lista = ["nottheonion", "technews", "hacking", "MachineLearning", "ProgrammerHumor", "cellbits", "MySummerCar",
-         "pescocofino", "Outdoors"]
+lista = environ['COMUN'].split(',')
 
 email_from = environ['FROM']
 key_from = environ['FROM_KEY']
