@@ -40,6 +40,7 @@ def send_email():
 
 # +3 horas para compensar o fuso do local que está hospedado
 schedule.every().day.at("09:30").do(send_email)
+schedule.every().day.at("21:30").do(send_email)
 #schedule.every(2).minutes.do(send_email)
 
 while True:
